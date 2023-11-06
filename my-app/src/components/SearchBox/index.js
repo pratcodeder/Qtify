@@ -10,7 +10,7 @@ export default () => {
       }}
     >
       <input
-        placeholder="trial"
+        placeholder="Search an album of your choice"
         style={{ flex: 1, borderRadius: "8px 0px 0px 8px", padding: "8px" }}
       />
       <button
