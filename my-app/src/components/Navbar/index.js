@@ -1,5 +1,6 @@
 import SearchBox from "../SearchBox";
 import Button from "../Button";
+
 import "./Navbar.css";
 
 export default () => {
