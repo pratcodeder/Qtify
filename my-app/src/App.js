@@ -26,6 +26,7 @@ function App() {
       <Navbar />
       <HeroSection />
       <Section title="Top Albums" data={topAlbums} />
+      <Section title="New Albums" data={newAlbums} />
     </div>
   );
 }
