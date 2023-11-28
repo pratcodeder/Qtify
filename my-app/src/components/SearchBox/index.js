@@ -1,9 +1,11 @@
 //........this is the way to use svg file from public folder ......
 import { ReactComponent as SearchIcon } from "./search-icon.svg";
-
+import Menu from "../Menu/index" ;
 export default () => {
   return (
-    <form
+    <div style = {{
+      position: 'relative'
+    }}><form
       style={{
         display: "flex",
         minWidth: "570px",
@@ -27,5 +29,7 @@ export default () => {
         <SearchIcon />
       </button>
     </form>
+    <Menu data={[1,2,3,4,5,6]} />
+    </div>
   );
 };

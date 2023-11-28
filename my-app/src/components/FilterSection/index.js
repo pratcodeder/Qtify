@@ -3,7 +3,7 @@ import Carousel from "../Carousel";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import "./FilterSection.css"
-export default ({title, data, filters}) => {
+export default ({title, data, filters, executeFilter}) => {
 const [selectedTab,setSelectedTab] = useState(0)
 
     return (<div className="section">
@@ -14,6 +14,7 @@ const [selectedTab,setSelectedTab] = useState(0)
       <Tabs
       value = {selectedTab}
       onChange={(_e, value) => {
+        executeFilter(filters[value].key)
         setSelectedTab(value)
       }}
       TabIndicatorProps = {{
@@ -25,7 +26,7 @@ const [selectedTab,setSelectedTab] = useState(0)
 {filters.map(f => <Tab  className='tab' key = {f.key} label={f.label} />)}
 
       </Tabs>
-        <Carousel data={data} />
+        <Carousel data={data} navId='filter' />
  
     
   </div>)

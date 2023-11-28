@@ -2,7 +2,7 @@ import "./Section.css";
 import Card from "../Card";
 import { useState } from "react";
 import Carousel from "../Carousel";
-export default ({ data, title }) => {
+export default ({ navId, data, title }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
@@ -20,7 +20,7 @@ export default ({ data, title }) => {
       </div>
       {isCollapsed ? (
         <h2>
-          <Carousel data={data} />
+          <Carousel navId={navId} data={data} />
         </h2>
       ) : (
         <div className="card-container">

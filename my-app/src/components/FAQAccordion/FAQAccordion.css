@@ -1,0 +1,45 @@
+.FAQSection {
+    position: relative;
+    width: 1135px;
+    height: 345px;
+    left: 152px;
+    border-radius:0px, 0px, 10px, 10px ;
+
+}
+
+.heading {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+
+.Accordion {
+    border: 1px solid var(--css-white) !important;
+    border-radius:10px !important;
+   
+}
+
+.summary {
+    background-color: var(--css-black) !important;
+    color: var(--css-white) !important;
+    border-radius:10px !important;
+}
+
+.typographyDetails {
+    font-size: 18px !important ;
+    font-weight: 700 !important;
+   
+}
+
+.typographySummary {
+    font-size: 20px !important ;
+    
+
+}
+
+.icon {
+    color: var(--css-primary);
+}
+
