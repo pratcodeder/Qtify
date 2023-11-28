@@ -4,6 +4,8 @@ import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import Card from "./components/Card";
 import Section from "./components/Section";
+import FilterSection from "./components/FilterSection";
+
 import "./App.css";
 
 const ENDPOINT = "https://qtify-backend-labs.crio.do/";
@@ -11,6 +13,8 @@ const ENDPOINT = "https://qtify-backend-labs.crio.do/";
 function App() {
   const [topAlbums, setTopAlbums] = useState([]);
   const [newAlbums, setNewAlbums] = useState([]);
+  const [songs, setSongs] = useState([]);
+  const [genres, setGenres] = useState([]);
 
   useEffect(() => {
     axios.get(`${ENDPOINT}albums/top`).then(({ data }) => {
@@ -18,7 +22,14 @@ function App() {
     });
     axios.get(`${ENDPOINT}albums/new`).then(({ data }) => {
       setNewAlbums(data);
+    }); 
+    axios.get(`${ENDPOINT}songs`).then(({ data }) => {
+      setSongs(data);
     });
+    axios.get(`${ENDPOINT}genres`).then(({ data }) => {
+      setGenres([{"key":"all", "label": "All"},...data.data]);
+     
+    }); 
   }, []);
 
   return (
@@ -27,6 +38,7 @@ function App() {
       <HeroSection />
       <Section title="Top Albums" data={topAlbums} />
       <Section title="New Albums" data={newAlbums} />
+      <FilterSection title="Songs" data={songs} filters={genres} />
     </div>
   );
 }
