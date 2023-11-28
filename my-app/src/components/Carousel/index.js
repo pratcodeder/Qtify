@@ -20,15 +20,26 @@ export default ({navId, data }) => {
         virtual
       >
         {data.map((cardData) => {
-          return (
-            <SwiperSlide key={cardData.id}>
-              <Card
-                imgSrc={cardData.image}
-                label={cardData.title}
-                followersCount={cardData.follows}
-              />
-            </SwiperSlide>
-          );
+          let songsValue = 0;
+          let likesValue = 0;
+
+       if (cardData.songs === undefined) {
+        likesValue = cardData.likes ;
+       } else {
+        songsValue = cardData.songs.length;
+       }
+
+            return (
+              <SwiperSlide key={cardData.id}>
+                <Card
+                  imgSrc={cardData.image}
+                  label={cardData.title}
+                  followersCount={cardData.follows}
+                  totalSongs={songsValue} 
+                  likes={likesValue} 
+                />
+              </SwiperSlide>
+            );          
         })}
       </Swiper>
       <div id={`arrow-left-${navId}`} className="arrow-left arrow">

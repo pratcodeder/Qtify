@@ -1,8 +1,11 @@
+.mainbody {
+    display: flex;
+    justify-content: center;
+}
+
 .FAQSection {
-    position: relative;
     width: 1135px;
     height: 345px;
-    left: 152px;
     border-radius:0px, 0px, 10px, 10px ;
 
 }

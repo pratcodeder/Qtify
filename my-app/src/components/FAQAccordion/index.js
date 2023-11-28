@@ -6,6 +6,7 @@ import "./FAQAccordion.css"
 
 export default () => {
     return (
+      <div className="mainbody">
         <div className="FAQSection">
            <h5 className="heading">FAQs</h5>
            <div>
@@ -31,6 +32,7 @@ export default () => {
       </Accordion>
            </div>
 
+        </div>
         </div>
     )
 }

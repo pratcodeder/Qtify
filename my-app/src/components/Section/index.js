@@ -25,12 +25,14 @@ export default ({ navId, data, title }) => {
       ) : (
         <div className="card-container">
           {data.map((cardData) => {
+           
             return (
               <Card
                 key={cardData.id}
                 imgSrc={cardData.image}
                 label={cardData.title}
                 followersCount={cardData.follows}
+                totalSongs= {cardData.songs.length}
               />
             );
           })}
